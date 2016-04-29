@@ -73,7 +73,6 @@ int initEmployees(employee* pEmployee, int length)
 int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
 {
     int i;
-    int ret=0;
 
     if(pEmployee == NULL ||  length <1 )
     {
@@ -121,9 +120,27 @@ int addEmployee(employee* pEmployee, int length, int id, char name[],char lastNa
  */
 employee* findEmployeeById(employee* pEmployee, int length,int id)
 {
+    int i;
+    int ret = -1;
 
-    return NULL;
-
+    if(pEmployee == NULL ||  length <1 )
+    {
+        return NULL;
+    }
+    else
+    {
+        for(i=0; i<length; i++)
+        {
+            if(pEmployee[i].id == id)
+            {
+                if(pEmployee[i].isEmpty == 0)
+                {
+                    ret = 0;
+                }
+            }
+        }
+    }
+    return ret;
 }
 
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
