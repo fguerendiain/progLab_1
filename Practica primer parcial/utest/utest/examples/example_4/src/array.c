@@ -57,7 +57,6 @@ int initEmployees(employee* pEmployee, int length)
     return ret;
 }
 
-
 /** \brief add in a existing list of employees the values recived as parameters
  *
  * \param pEmployee employee*
@@ -98,18 +97,6 @@ int addEmployee(employee* pEmployee, int length, int id, char name[],char lastNa
     return -1;
 }
 
-
-/*    int id;
-    char name[51];
-    char lastName[51];
-    float salary;
-    int sector;
-    int isEmpty;
-
-    return ret;*/
-
-
-
 /** \brief find a Employee by Id
  *
  * \param pEmployee employee*
@@ -121,7 +108,7 @@ int addEmployee(employee* pEmployee, int length, int id, char name[],char lastNa
 employee* findEmployeeById(employee* pEmployee, int length,int id)
 {
     int i;
-    int ret = -1;
+    employee auxPemployee;
 
     if(pEmployee == NULL ||  length <1 )
     {
@@ -131,16 +118,16 @@ employee* findEmployeeById(employee* pEmployee, int length,int id)
     {
         for(i=0; i<length; i++)
         {
-            if(pEmployee[i].id == id)
+            if(pEmployee[i].isEmpty == 0)
             {
-                if(pEmployee[i].isEmpty == 0)
+                if(pEmployee[i].id == id)
                 {
-                    ret = 0;
+                    auxPemployee = pEmployee[i];
+                    return &auxPemployee;
                 }
             }
         }
     }
-    return ret;
 }
 
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
@@ -153,10 +140,39 @@ employee* findEmployeeById(employee* pEmployee, int length,int id)
  */
 int removeEmployee(employee* pEmployee, int length, int id)
 {
+    int i;
+    int ret = -1;
 
-    return -1;
+
+    if(pEmployee == NULL ||  length <1 )
+    {
+        return ret;
+    }
+    else
+    {
+        for(i=0 ; i<length ; i++)
+        {
+                if(pEmployee[i].isEmpty == 0)
+                {
+                    if(pEmployee[i].id == id)
+                    {
+                        pEmployee[i].isEmpty = 1;
+                        ret = 0;
+                    }
+                }
+        }
+    }
+    return ret;
 }
 
+/*    int id;
+    char name[51];
+    char lastName[51];
+    float salary;
+    int sector;
+    int isEmpty;
+
+    return ret;*/
 
 
 /** \brief Sort the elements in the array of employees by Name, the argument order indicate UP or DOWN order
@@ -169,8 +185,53 @@ int removeEmployee(employee* pEmployee, int length, int id)
  */
 int sortEmployeeByName(employee* pEmployee, int length, int order)
 {
+    int i;
+    int j;
+    int ret = -1;
+    employee auxPemployee;
 
-    return 0;
+    if(pEmployee == NULL ||  length <1 )
+    {
+        ret = -1;
+    }
+    else
+    {
+        switch(order)
+        {
+            case 1 :
+                for(i=0; i<length-1; i++)
+                {
+                    for(j=i+1;j<length;j++)
+                    {
+                        if(pEmployee[i].isEmpty == 0 && strcmp(pEmployee[i].name,pEmployee[j].name) > 0)
+                        {
+                            auxPemployee = pEmployee[i];
+                            pEmployee[i] = pEmployee[j];
+                            pEmployee[j] = auxPemployee;
+                            ret = 0;
+                        }
+                    }
+                }
+            break;
+
+            case 2:
+                for(i=0; i<length-1; i++)
+                {
+                    for(j=i+1;j<length;j++)
+                    {
+                        if(pEmployee[i].isEmpty == 0 && strcmp(pEmployee[i].name,pEmployee[j].name) < 0)
+                        {
+                            auxPemployee = pEmployee[i];
+                            pEmployee[i] = pEmployee[j];
+                            pEmployee[j] = auxPemployee;
+                            ret = 0;
+                        }
+                    }
+                }
+            break;
+        }
+    }
+    return ret;
 }
 
 

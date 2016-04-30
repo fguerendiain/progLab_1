@@ -31,14 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../../ownLibraries/screenSystemShow.c">
+		<Unit filename="../../../../ownLibC/screenSystemShow.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../ownLibraries/screenSystemShow.h" />
-		<Unit filename="../../../ownLibraries/userInputOutput.c">
+		<Unit filename="../../../../ownLibC/screenSystemShow.h" />
+		<Unit filename="../../../../ownLibC/userInputOutput.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../ownLibraries/userInputOutput.h" />
+		<Unit filename="../../../../ownLibC/userInputOutput.h" />
 		<Unit filename="functions.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,7 +46,6 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="struct.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
