@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1462336251 source:/mnt/datos/Develop/LINUX/codeblocks/ownLibC/screenSystemShow.c
+1462346274 source:/mnt/datos/Develop/LINUX/codeblocks/ownLibC/screenSystemShow.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -30,7 +30,7 @@
 
 1462337051 /mnt/datos/Develop/LINUX/codeblocks/ownLibC/userInputOutput.h
 
-1462345644 source:/mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/main.c
+1462385028 source:/mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/main.c
 	<stdio.h>
 	<stdlib.h>
 	"string.h"
