@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1462303071 source:/mnt/datos/Develop/LINUX/codeblocks/ownLibC/screenSystemShow.c
+1462336251 source:/mnt/datos/Develop/LINUX/codeblocks/ownLibC/screenSystemShow.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -15,23 +15,25 @@
 	<ctype.h>
 	"screenSystemShow.h"
 
-1462306445 source:/mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/lib.c
+1462345671 source:/mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/lib.c
 	<stdio.h>
 	<stdlib.h>
 	"types.h"
 	"lib.h"
+	"string.h"
 	"../../ownLibC/screenSystemShow.h"
 	"../../ownLibC/userInputOutput.h"
 
-1462302971 /mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/types.h
+1462337321 /mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/types.h
 
-1462306302 /mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/lib.h
+1462345486 /mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/lib.h
 
-1461907031 /mnt/datos/Develop/LINUX/codeblocks/ownLibC/userInputOutput.h
+1462337051 /mnt/datos/Develop/LINUX/codeblocks/ownLibC/userInputOutput.h
 
-1462303457 source:/mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/main.c
+1462345644 source:/mnt/datos/Develop/LINUX/codeblocks/progLab_1/PP1pract1/main.c
 	<stdio.h>
 	<stdlib.h>
+	"string.h"
 	"types.h"
 	"lib.h"
 	"../../ownLibC/screenSystemShow.h"

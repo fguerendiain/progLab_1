@@ -1,5 +1,5 @@
-#ifndef __STRUCT.H
-#define __STRUCT.H
+#ifndef __TYPES
+#define __TYPES
 
 typedef struct
 {
@@ -21,4 +21,4 @@ typedef struct
 
 
 
-#endif // __STRUCT.H
+#endif // __TYPES
