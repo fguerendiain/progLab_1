@@ -37,3 +37,42 @@
 	"../../ownLibC/screenSystemShow.h"
 	"../../ownLibC/userInputOutput.h"
 
+1462323170 source:d:\fguerendiain\proglab_1\pp1pract1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"types.h"
+	"lib.h"
+	"../../ownLibC/screenSystemShow.h"
+	"../../ownLibC/userInputOutput.h"
+
+1462321296 d:\fguerendiain\proglab_1\pp1pract1\types.h
+
+1462323728 d:\fguerendiain\proglab_1\pp1pract1\lib.h
+
+1462314193 d:\fguerendiain\ownlibc\screensystemshow.h
+
+1462314193 d:\fguerendiain\ownlibc\userinputoutput.h
+
+1462318383 source:d:\fguerendiain\ownlibc\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibC/screenSystemShow.h"
+
+1462314193 source:d:\fguerendiain\ownlibc\userinputoutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+
+1462323297 source:d:\fguerendiain\proglab_1\pp1pract1\lib.c
+	<stdio.h>
+	<stdlib.h>
+	"types.h"
+	"lib.h"
+	"string.h"
+	"../../ownLibC/screenSystemShow.h"
+	"../../ownLibC/userInputOutput.h"
+

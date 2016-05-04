@@ -4,7 +4,7 @@
 #include "lib.h"
 #include "../../ownLibC/screenSystemShow.h"
 #include "../../ownLibC/userInputOutput.h"
-#define QUANTITY 1000
+#define QUANTITY 5
 
 int main()
 {
@@ -18,6 +18,37 @@ int main()
         exit = initializeEmptyFlagArray(article,provider,QUANTITY);
     }while(exit);
 
+//*******************************************************************************
+//*******************************************************************************
+        //HARDCODE
+    int i;
+    int auxSerialNumber[] = {1,2,3,4,5};
+    int auxSerialSuplier[] = {21,22,23,24,25};
+    char auxDescriptionArticle[][51] = {"JABON", "SOPA","LENTES","PANUELO","MOCO"};
+    int auxAmount[] = {123,321,546,321,654};
+    int auxStock[] = {1,5,6,7,8};
+    int auxSerialSuplier2[] = {31,32,33,34,35};
+    char auxDescriptionProvider[][51] = {"FERRETERIA","AERONAUTICA","FARMACIA","SUPERMERCADO","ALMACEN"};
+    int auxIsEmpty[] = {0,0,0,0,0};
+
+    for (i=0 ; i<QUANTITY ; i++)
+    {
+        //INICIALIZAR 1ER ESTRUCTURA
+        article[i].serialNumber = auxSerialNumber[i];
+        article[i].serialSuplier= auxSerialSuplier[i];
+        strcpy(article[i].description,auxDescriptionArticle[i]);
+        article[i].amount = auxAmount[i];
+        article[i].stock = auxStock[i];
+        article[i].isEmpty = auxIsEmpty[i];
+
+        //INICIALIZAR 2DA ESTRUCTURA
+        provider[i].serialSuplier = auxSerialSuplier2[i];
+        strcpy(provider[i].description,auxDescriptionProvider[i]);
+        provider[i].isEmpty = auxIsEmpty[i];
+    }
+//**************************************************************************
+//**************************************************************************
+
     do
     {
         printAwesomeMenu("1. ALTA DE PRODUCTO\n"
@@ -30,5 +61,6 @@ int main()
         exit = runFunctionMenu(menu,article,provider,QUANTITY);
 
     }while(exit);
+
     return 0;
 }

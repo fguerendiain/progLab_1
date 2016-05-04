@@ -13,7 +13,7 @@ typedef struct
 
 typedef struct
 {
-    int serialNumber;
+    int serialSuplier;
     char description[51];
     int isEmpty;
 }Suplier;

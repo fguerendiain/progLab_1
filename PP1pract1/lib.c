@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include "types.h"
 #include "lib.h"
+#include "string.h"
 #include "../../ownLibC/screenSystemShow.h"
 #include "../../ownLibC/userInputOutput.h"
-#define QUANTITY 1000
+#define QUANTITY 5
 
 #define ADD 1
 #define MODIFY 2
@@ -49,7 +50,7 @@ int runFunctionMenu(int menu, Product *article, Suplier *provider, int lenght)
 
         case LS_PRODUCT :
             cleanScreen();
- //           listArticle(article, provider, lenght);
+            listArticle(article, lenght);
             pauseScreen();
         break;
 
@@ -86,18 +87,27 @@ int initializeEmptyFlagArray(Product *article,Suplier *provider,int length)
                 article[i].serialNumber = -1;
                 article[i].serialSuplier = -1;
                 article[i].description[0] = '\0';
-                article[i].amount = -1;
-                article[i].stock = -1;
+                article[i].amount = 0;
+                article[i].stock = 0;
                 article[i].isEmpty = 1;
 
                 provider[i].description[0] = '\0';
-                provider[i].serialNumber = -1;
+                provider[i].serialSuplier = -1;
                 provider[i].isEmpty = 1;
         }
         ret = 0;
     }
     return ret;
 }
+
+/** \brief Permite agregar un articulo
+ *
+ * \param (article) array de articulos
+ * \param (provider) array de proveedores
+ * \param (lenght) longitud de los arrays
+ * \return 0 si los valores se cargaron correctamente
+ *
+ */
 
 int addArticle(Product *article, Suplier *provider,int lenght)
 {
@@ -109,7 +119,7 @@ int addArticle(Product *article, Suplier *provider,int lenght)
     int i;
     int index = 1;
 
-    // HACER FORMULA PARA BUSCAR EL PRIMERO LIBRE
+    index = searchFirstEmpty(provider,article,lenght,1);
 
     getUserInputInt(&auxSerialNumber,0,QUANTITY,"Ingrese el codigo del producto\n","Por favor ingrese un codigo valido\n",0);
     do
@@ -117,7 +127,7 @@ int addArticle(Product *article, Suplier *provider,int lenght)
         getUserInputInt(&auxSerialSuplier,0,QUANTITY,"Ingrese el codigo del proveedor asociado\n","Por favor ingrese un codigo valido\n",0);
         for(i=0; i<QUANTITY; i++)
         {
-            if(provider[i].serialNumber == auxSerialSuplier)
+            if(provider[i].serialSuplier == auxSerialSuplier)
             {
                 flagValidSuplier = 0;
             }
@@ -129,7 +139,80 @@ int addArticle(Product *article, Suplier *provider,int lenght)
             return -1;
         }
     }while(flagValidSuplier);
-    getUserInputString(&auxDescription,3,50,"Ingrese la descripcion del articulo\n","Por favor ingrese datos validos\n",4000,0);
+    getUserInputString(auxDescription,3,50,"Ingrese la descripcion del articulo\n","Por favor ingrese datos validos\n",4000,0);
     getUserInputInt(&auxAmount,0,10000,"Ingrese el importe del articulo\n","Por favor ingrese un importe valido\n",0);
+
+    article[index].serialNumber = auxSerialNumber;
+    article[index].serialSuplier = auxSerialSuplier;
+    strcpy(article[index].description,auxDescription);
+    article[index].amount = auxAmount;
+    article[index].stock++;
     article[index].isEmpty = 0;
+
+    return 0;
+}
+
+/** \brief busca el primer elemnto libre en los array article y provider
+ *
+ * \param (provider) array de proveedores
+ * \param (article) array de articulos
+ * \return devuelve el subindice buscado
+ *
+ */
+
+int searchFirstEmpty(Suplier *provider, Product *article, int length, int arrayOption)
+{
+    int i;
+
+    switch(arrayOption)
+    {
+        case 1 :
+            for(i=0 ; i<length ; i++)
+            {
+                if(article[i].isEmpty == 0)
+                    return i;
+            }
+        break;
+
+        case 2 :
+            for(i=0 ; i<length ; i++)
+            {
+                if(provider[i].isEmpty == 0)
+                    return i;
+            }
+        break;
+    }
+}
+
+int listArticle(Product *article, int length)
+{
+    int minStock;
+    int maxStock;
+    int minIndex;
+    int maxIndex;
+    int i;
+    int j;
+
+    minStock = article[0].stock;
+    maxStock = article[0].stock;
+
+    for(i=0 ; i<QUANTITY ; i++)
+    {
+        if(article[i].stock > maxStock)
+        {
+            maxIndex = i;
+        }
+    }
+    for(j=0 ; j<QUANTITY ; j++)
+    {
+        if(article[j].stock < minStock)
+        {
+            minIndex = j;
+        }
+    }
+
+    printf("\t\tS/N\tPROV\tDESC\tIMPORTE\tSTOCK\n");
+    printf("Mayor Stock\t%d\t%d\t%s\t%d\t%d\n",article[i].serialNumber,article[i].serialSuplier,article[i].description,article[i].amount,article[i].stock);
+    printf("Menor Stock\t%d\t%d\t%s\t%d\t%d\n",article[j].serialNumber,article[j].serialSuplier,article[j].description,article[j].amount,article[j].stock);
+
 }
