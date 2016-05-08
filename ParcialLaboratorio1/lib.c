@@ -105,9 +105,15 @@ int initializeEmptyFlagArray(Client *user,Post *comment,int length)
         int i;
         for(i=0 ; i<length ; i++)
         {
-                user[i].state = 1;
-                comment[i].state = 1;
+                user[i].nick = -1;
                 user[i].maxComment = 0;
+                user[i].passwd = 0;
+                user[i].state = 1;
+
+                comment[i].id = -1;
+                comment[i].like = 0;
+                comment[i].userNickRef = -1;
+                comment[i].state = 1;
         }
         ret = 0;
     }
@@ -141,7 +147,7 @@ int addUser(Client *user, Post *comment,int lenght, int modifyFlag)
         {
             if(modifyFlag)
             {
-                getUserInputInt(&auxNick,0,lenght,"Ingrese el Nick del usuario (numeros hasta 4 digitos)\n","Por favor ingrese un numero valido\n",0);
+                getUserInputInt(&auxNick,0,lenght,"Ingrese el Nick del usuario\n","Por favor ingrese un numero valido\n",0);
             }
             getUserInputString(&auxName,3,31,"Ingrese el nombre del usuario\n","Por favor ingrese un nombre valido\n",SRTINGBUFFER,0);
             getUserInputString(&auxEmail,5,31,"Ingrese el e-mail del usuario\n","Por favor ingrese un e-mail valido\n",SRTINGBUFFER,0);
@@ -168,6 +174,7 @@ int addUser(Client *user, Post *comment,int lenght, int modifyFlag)
  *
  * \param (comment) array de proveedores
  * \param (user) array de articulos
+ * \param (arrayOption) selecciona el array donde buscar
  * \return devuelve el subindice buscado, en caso que no exista devuelve -1
  *
  */
@@ -458,7 +465,7 @@ int newComment(Client *user, Post *comment, int lenght)
 
     if(user!=NULL && comment!=NULL && lenght>0)
     {
-        validUser = getUserInputInt(&validUser,0,lenght,"Ingrese su Nick\n","Por favor ingrese un Nick valido\n",0);
+        getUserInputInt(&validUser,0,lenght,"Ingrese su Nick\n","Por favor ingrese un Nick valido\n",0);
         for(i=0;i<lenght;i++)
         {
             if(validUser==user[i].nick)
@@ -480,13 +487,13 @@ int newComment(Client *user, Post *comment, int lenght)
         }
         if(flagCheckPasswd)
         {
-            printf("La contraseña ingresada no es valida, por favor intentelo nuevamente");
+            printf("La contraseña ingresada no es valida, por favor intentelo nuevamente\n");
             return 0;
         }
         index = searchFirstEmpty(comment,user,lenght,2);
 
         comment[index].userNickRef = validUser;
-        getUserInputString(&comment[index].text,0,140,"Ingrese su comentario","Por favor ingrese un comentario valido",SRTINGBUFFER,0);
+        getUserInputString(&comment[index].text,0,140,"Ingrese su comentario:\n","Por favor ingrese un comentario valido:\n",SRTINGBUFFER,0);
         comment[index].state = 0;
         ret = 0;
     }
@@ -518,7 +525,7 @@ int newLike(Client *user, Post *comment, int lenght)
 
     if(user!=NULL && comment!=NULL && lenght>0)
     {
-        validUser = getUserInputInt(&validUser,0,lenght,"Ingrese su Nick\n","Por favor ingrese un Nick valido\n",0);
+        getUserInputInt(&validUser,0,lenght,"Ingrese su Nick\n","Por favor ingrese un Nick valido\n",0);
         for(i=0;i<lenght;i++)
         {
             if(validUser==user[i].nick)
@@ -533,17 +540,17 @@ int newLike(Client *user, Post *comment, int lenght)
             printf("El usuario ingresado no es valido, por favor intentelo nuevamente\n");
             return 0;
         }
-        getUserInputInt(&validPasswd,0,9999,"Ingrese su clave numerica de 4 digitos\n","Por favor ingrese una clave valida",0);
+        getUserInputInt(&validPasswd,0,9999,"Ingrese su clave numerica de 4 digitos\n","Por favor ingrese una clave valida\n",0);
         if(validPasswd==user[index].passwd)
         {
             flagCheckPasswd = 0;
         }
         if(flagCheckPasswd)
         {
-            printf("La contraseña ingresada no es valida, por favor intentelo nuevamente");
+            printf("La contraseña ingresada no es valida, por favor intentelo nuevamente\n");
             return 0;
         }
-        getUserInputString(&validComment,0,lenght,"Ingrese el identificador del comentario","Por favor ingrese un identificador valido",SRTINGBUFFER,0);
+        getUserInputInt(&validComment,0,lenght,"Ingrese el identificador del comentario\n","Por favor ingrese un identificador valido\n",0);
         for(i=0;i<lenght;i++)
         {
             if(validComment==comment[i].id)
@@ -554,13 +561,13 @@ int newLike(Client *user, Post *comment, int lenght)
             }
             if(flagCheckComment)
             {
-                printf("La contraseña ingresada no es valida, por favor intentelo nuevamente");
+                printf("La contraseña ingresada no es valida, por favor intentelo nuevamente\n");
                 return 0;
             }
         }
-        comment[index].like++;
+        comment[indexComment].like++;
         stringSetCase(comment[indexComment].text,3);
-        printf("Sumaste un like al siguiente comentario '%s'",comment[indexComment].text);
+        printf("Sumaste un like al siguiente comentario '%s'\n",comment[indexComment].text);
         ret = 0;
     }
     return ret;

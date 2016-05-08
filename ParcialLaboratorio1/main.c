@@ -5,7 +5,7 @@
 #include "screenSystemShow.h"
 #include "userInputOutput.h"
 
-#define QUANTITY 1000
+#define QUANTITY 10
 
 #define HARDCODE 1 //([1] HABILITA LA CARGA DE DATOS DEFAULT, [0] DESHABILITA)
 
@@ -27,13 +27,13 @@ if(HARDCODE){/******************************************************************
     int i;
 
     int auxNick[] = {1,2,3,4,5};
-    int auxPasswd[] = {1234,8523,7896,6541,1236};
+    int auxPasswd[] = {1234,4321,1342,2431,1423};
     char auxName[][51] = {"BARRY", "BRUCE","CLARK","DIANA","HALL"};
     char auxEmail[][51] = {"FLASH@GMAIL.COM", "BATMAN@HOTMAIL.COM","SUPERMAN@YAHOO.COM","WWOMAN@UOL.COM","GREEN@FACEBOOK.COM"};
 
     char auxText[][51] = {"HOY TE CONVERTIS EN HEROE","VAMOS QUE SALE","O CUATRO O NADA","SI SE PUEDE","MAY THE FORCE BE WITH YOU"};
     int auxLike[] = {1,5,6,7,2};
-    int auxUserNickRef[] = {1,1,1,4,5};
+    int auxUserNickRef[] = {1,2,3,4,5};
 
     int auxState[] = {0,0,0,0,0};
 
@@ -50,6 +50,7 @@ if(HARDCODE){/******************************************************************
         comment[i].like = auxLike[i];
         comment[i].userNickRef = auxUserNickRef[i];
         comment[i].state = auxState[i];
+        comment[i].id = auxNick[i];
     }
 /*******************************************************************************
 *******************************************************************************/}

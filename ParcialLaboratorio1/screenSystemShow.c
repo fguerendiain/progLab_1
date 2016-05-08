@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "string.h"
-#include "../ownLibC/screenSystemShow.h"
+#include "screenSystemShow.h"
 
-#define LIMPIARPANTALLA "cls" // "cls" para windows | "clear" para linux
+#define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
 
 /** \brief Imprime el menu
  * \param (menu) recibe el texto a imprimir
