@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1462409618 source:d:\fguerendiain\parciallaboratorio1\lib.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"string.h"
+	"screenSystemShow.h"
+	"userInputOutput.h"
+
+1462409442 d:\fguerendiain\parciallaboratorio1\lib.h
+
+1461981244 d:\fguerendiain\parciallaboratorio1\screensystemshow.h
+
+1462337050 d:\fguerendiain\parciallaboratorio1\userinputoutput.h
+
+1462405894 source:d:\fguerendiain\parciallaboratorio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"lib.h"
+	"screenSystemShow.h"
+	"userInputOutput.h"
+
+1462399107 source:d:\fguerendiain\parciallaboratorio1\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibC/screenSystemShow.h"
+
+1461981244 d:\fguerendiain\ownlibc\screensystemshow.h
+
+1461907030 source:d:\fguerendiain\parciallaboratorio1\userinputoutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+
+1462409618 source:d:\fguerendiain\guerendiain_franco\parciallaboratorio1\lib.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"string.h"
+	"screenSystemShow.h"
+	"userInputOutput.h"
+
+1462409442 d:\fguerendiain\guerendiain_franco\parciallaboratorio1\lib.h
+
+1461981244 d:\fguerendiain\guerendiain_franco\parciallaboratorio1\screensystemshow.h
+
+1462337050 d:\fguerendiain\guerendiain_franco\parciallaboratorio1\userinputoutput.h
+
+1462405894 source:d:\fguerendiain\guerendiain_franco\parciallaboratorio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"lib.h"
+	"screenSystemShow.h"
+	"userInputOutput.h"
+
+1462399107 source:d:\fguerendiain\guerendiain_franco\parciallaboratorio1\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibC/screenSystemShow.h"
+
+1461907030 source:d:\fguerendiain\guerendiain_franco\parciallaboratorio1\userinputoutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+
