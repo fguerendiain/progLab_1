@@ -29,6 +29,7 @@
 int runFunctionMenu(int menu, Client *user, Post *comment, int lenght)
 {
     int ret = 1;
+    int flagFirstAdd = 1;
 
     if(user!=NULL && comment!=NULL && lenght>0)
     {
@@ -36,31 +37,59 @@ int runFunctionMenu(int menu, Client *user, Post *comment, int lenght)
         {
             case ADD :
                 cleanScreen();
-                addUser(user, comment, lenght,1);
+                flagFirstAdd = addUser(user, comment, lenght,1);
                 pauseScreen();
             break;
 
             case MODIFY :
                 cleanScreen();
-                modifyUser(user, comment, lenght);
+                if(flagFirstAdd == 0)
+                {
+                    modifyUser(user, comment, lenght);
+                }
+                else
+                {
+                    printf("Debe ingresar al menos un usuario\n\n");
+                }
                 pauseScreen();
             break;
 
             case DEL :
                 cleanScreen();
-                delUser(user, lenght);
+                if(flagFirstAdd == 0)
+                {
+                    delUser(user, lenght);
+                }
+                else
+                {
+                    printf("Debe ingresar al menos un usuario\n\n");
+                }
                 pauseScreen();
             break;
 
             case COMMENT :
                 cleanScreen();
-                newComment(user,comment,lenght);
+                if(flagFirstAdd == 0)
+                {
+                    newComment(user,comment,lenght);
+                }
+                else
+                {
+                    printf("Debe ingresar al menos un usuario\n\n");
+                }
                 pauseScreen();
             break;
 
             case LIKE :
                 cleanScreen();
-                newLike(user,comment,lenght);
+                if(flagFirstAdd == 0)
+                {
+                    newLike(user,comment,lenght);
+                }
+                else
+                {
+                    printf("Debe ingresar al menos un usuario\n\n");
+                }
                 pauseScreen();
             break;
 
@@ -164,7 +193,7 @@ int addUser(Client *user, Post *comment,int lenght, int modifyFlag)
         else
         {
             printf("No hay lugar para agregar nuevos articulos\n");
-            ret = 0;
+            ret = -2;
         }
     }
     return ret;

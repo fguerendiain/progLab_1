@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1462996291 source:/home/mauro/Documentos/workspace_c/Clase_16_Practica/main.c
+	<stdlib.h>
+	<stdio.h>
+	"parser.h"
+	<time.h>
+
+1462995882 /home/mauro/Documentos/workspace_c/Clase_16_Practica/parser.h
+
+1462996071 source:/home/mauro/Documentos/workspace_c/Clase_16_Practica/parser.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"parser.h"
+
+1462996470 source:d:\mauriciodavila\clase_16_practica\main.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"parser.h"
+
+1462995882 d:\mauriciodavila\clase_16_practica\parser.h
+
+1462996070 source:d:\mauriciodavila\clase_16_practica\parser.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"parser.h"
+
+1463010937 source:d:\fguerendiain\proglab_1\clase_16_practica\main.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	"parser.h"
+
+1462995882 d:\fguerendiain\proglab_1\clase_16_practica\parser.h
+
+1462996070 source:d:\fguerendiain\proglab_1\clase_16_practica\parser.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"parser.h"
+
+1463006640 source:d:\fguerendiain\ownlibc\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibC/screenSystemShow.h"
+
+1463006640 d:\fguerendiain\ownlibc\screensystemshow.h
+

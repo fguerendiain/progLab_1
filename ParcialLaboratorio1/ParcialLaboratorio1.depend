@@ -115,3 +115,39 @@
 	"string.h"
 	"screenSystemShow.h"
 
+1463002063 source:d:\fguerendiain\proglab_1\parciallaboratorio1\lib.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"string.h"
+	"screenSystemShow.h"
+	"userInputOutput.h"
+
+1463000996 d:\fguerendiain\proglab_1\parciallaboratorio1\lib.h
+
+1463000996 d:\fguerendiain\proglab_1\parciallaboratorio1\screensystemshow.h
+
+1463000996 d:\fguerendiain\proglab_1\parciallaboratorio1\userinputoutput.h
+
+1463000996 source:d:\fguerendiain\proglab_1\parciallaboratorio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"lib.h"
+	"screenSystemShow.h"
+	"userInputOutput.h"
+
+1463000996 source:d:\fguerendiain\proglab_1\parciallaboratorio1\userinputoutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+
+1463001108 source:d:\fguerendiain\proglab_1\parciallaboratorio1\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"screenSystemShow.h"
+
